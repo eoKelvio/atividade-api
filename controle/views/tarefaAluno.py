@@ -5,6 +5,7 @@ from rest_framework import status
 from controle.serializers.tarefaSerializer import TarefaSerializer
 from controle.models.tarefa import Tarefa
 
+#Classe que tem como objetivo, puxar todas as tarefas atribuidas a um aluno.
 class TarefaAlunoView(APIView):
     def get(self, request, id, format=None):
         tarefa = Tarefa.objects.filter(aluno_id=id)

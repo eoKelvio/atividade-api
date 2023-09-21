@@ -6,26 +6,24 @@ from rest_framework import status
 from controle.models.aluno import Aluno
 from controle.serializers.alunoSerializer import AlunoSerializer
 
+# Classe que tem como objetivo, puxar o objeto pelo seu id e demonstrar seus dados.
 class AlunoDetalheView(APIView):
-    """
-    Retrieve, update or delete a category instance.
-    """
-
-    # Chama o objeto e verifica se ele existe
+    # Chama o objeto e verifica se ele existe usando o id da url e vendo se bate com o id da tabela.
     def get_object(self, id):
         try:
             return Aluno.objects.get(id=id)
         except Aluno.DoesNotExist:
             raise Http404
 
-    # Chama o objeto a ser serializado e alterado
+    # Chama o objeto, passa o serializer e o imprime na tela.   
     def get(self, request, id, format=None):
         aluno = self.get_object(id)
         serializer = AlunoSerializer(aluno)
         return Response(serializer.data)
 
 
-    # Realiza as alterações sobre o codigo chamado
+    # Chama o objeto pelo id, faz uma requisição nos dados do serializer, se os dados baterem com os dados exigidos,
+    # salva no serializer modificando um objeto ja existente no banco de dados. Se não bater gera um erro.
     def put(self, request, id, format=None):
         aluno = self.get_object(id)
         serializer = AlunoSerializer(aluno,data=request.data)
@@ -34,7 +32,7 @@ class AlunoDetalheView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # Realiza a exclusão do objeto chamado
+    # Chama o objeto pelo id, e deleta. 
     def delete(self, request, id, format=None):
         aluno = self.get_object(id)
         aluno.delete()

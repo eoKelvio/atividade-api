@@ -4,5 +4,5 @@ class Disciplina(models.Model):
     nome = models.CharField(max_length=30)
     descricao = models.TextField()
 
-    def __str__(self) -> str:
-        return super().__str__()
+    def __str__(self) :
+        return self.nome

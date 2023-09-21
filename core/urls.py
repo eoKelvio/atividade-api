@@ -7,7 +7,6 @@ from controle.views.tarefaDetalheView import TarefaDetalheView
 from controle.views.disciplinaView import DisciplinaView
 from controle.views.disciplinaDetalheView import DisciplinaDetalheView
 
-
 urlpatterns = [
     path('alunos/', AlunoView.as_view()),
     path('alunos/<int:id>/', AlunoDetalheView.as_view()),

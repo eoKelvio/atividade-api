@@ -7,6 +7,7 @@ from controle.models.disciplina import Disciplina
 from controle.serializers.disciplinaSerializer import DisciplinaSerializer
 
 class DisciplinaDetalheView(APIView):
+
     def get_object(self, id):
         try:
             return Disciplina.objects.get(id=id)

@@ -6,12 +6,7 @@ from rest_framework import status
 from controle.models.tarefa import Tarefa
 from controle.serializers.tarefaSerializer import TarefaSerializer
 
-
-# Cria a classe TarefaDetalheView
 class TarefaDetalheView(APIView):
-    """
-    Retrieve, update or delete a category instance.
-    """
     def get_object(self, id):
         try:
             return Tarefa.objects.get(id=id)

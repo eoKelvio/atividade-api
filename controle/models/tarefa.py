@@ -2,6 +2,7 @@ from django.db import models
 from controle.models.disciplina import Disciplina
 from controle.models.aluno import Aluno
 
+#Classe que cria o modelo tarefa com dois campos diferentes que criam duas chaves estrangeiras, uma Many to One, e outra Many to Many.
 class Tarefa(models.Model):
     titulo = models.CharField(max_length=30, null=False)
     descricao = models.TextField()
