@@ -6,9 +6,7 @@ from controle.serializers.tarefaSerializer import TarefaSerializer
 from controle.models.tarefa import Tarefa
 
 class TarefaAlunoView(APIView):
-
-  def get(self, request, id, format=None):
-       def get(self, request, id, format=None):
+    def get(self, request, id, format=None):
         tarefa = Tarefa.objects.filter(aluno_id=id)
         serializer = TarefaSerializer(tarefa, many=True)
         return Response(serializer.data)
