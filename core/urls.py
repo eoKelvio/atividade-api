@@ -15,5 +15,5 @@ urlpatterns = [
     path('disciplinas/<int:id>/', DisciplinaDetalheView.as_view()),
     path('tarefas/', TarefaView.as_view()),
     path('tarefas/<int:id>/', TarefaDetalheView.as_view()),
-    path('alunos/<int:id>/tarefas', TarefaAlunoView.as_view()),
+    path('alunos/<int:id>/tarefas/', TarefaAlunoView.as_view()),
 ]
