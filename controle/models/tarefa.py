@@ -8,7 +8,7 @@ class Tarefa(models.Model):
     descricao = models.TextField()
     dataEntrega = models.DateField(null=False)
     concluida = models.BooleanField(default=False)
-    aluno = models.ForeignKey(Aluno, related_name='tarefa', on_delete=models.CASCADE)
+    aluno = models.ForeignKey(Aluno, related_name='tarefas', on_delete=models.CASCADE)
     disciplina = models.ManyToManyField(Disciplina, related_name='tarefa')
 
     def __str__(self) -> str:

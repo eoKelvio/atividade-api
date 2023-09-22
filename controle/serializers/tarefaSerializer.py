@@ -8,8 +8,8 @@ class TarefaSerializer(serializers.ModelSerializer):
 
     # Váriavel que sinaliza a chave primaria de outra tabela, podendo ser many True ou False e puxando todos os objetos da Função.
     # SlugRelatedField usado para ao invez de usar ids, usar o nome direto do aluno e da matéria.
-    aluno = serializers.SlugRelatedField(queryset=Aluno.objects.all(), slug_field='nome')
-    disciplina = serializers.SlugRelatedField(queryset=Disciplina.objects.all(), slug_field='nome', many=True)
+    aluno = serializers.PrimaryKeyRelatedField(queryset=Aluno.objects.all(), slug_field='nome')
+    disciplina = serializers.PrimaryKeyRelatedField(queryset=Disciplina.objects.all(), slug_field='nome', many=True)
     
     class Meta:
         model = Tarefa
