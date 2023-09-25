@@ -5,6 +5,10 @@ Neste código é possível:
 - Criação de alunos.
 - Criação de disciplinas.
 - Criação de tarefas que são atribuidas a um aluno em específico e podem ser atribuidas a muitas disciplinas.
+- Visualização de todos os alunos.
+- Visualização de todas as disciplinas.
+- Visualização de todas as tarefas.
+- Visualização de todas as tarefas atribuidas a um unico aluno.
 
 Atribuições:
 
